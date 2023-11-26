@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Accident Forecast</title>
+</head>
+<body>
+    <h1>Accident Forecast</h1>
+    <form id="predictionForm">
+        <label for="category">Category:</label>
+        <select id="category" name="category">
+            {% for category in categories %}
+                <option value="{{ category }}">{{ category }}</option>
+            {% endfor %}
+        </select><br><br>
+        
+        <label for="type">Type:</label>
+        <select id="type" name="type">
+            {% for type in types %}
+                <option value="{{ type }}">{{ type }}</option>
+            {% endfor %}
+        </select><br><br>
+        
+        <label for="year">Year:</label>
+        <input type="text" id="year" name="year" placeholder="Year"><br><br>
+        
+        <label for="month">Month:</label>
+        <input type="text" id="month" name="month" placeholder="Month"><br><br>
+        
+        <button type="button" onclick="getForecast()">Get Forecast</button>
+    </form>
+    <div id="forecastResult"></div>
+
+    <script>
+        function getForecast() {
+            const category = document.getElementById('category').value;
+            const _type = document.getElementById('type').value;
+            const year = document.getElementById('year').value;
+            const month = document.getElementById('month').value;
+
+            fetch('/forecast', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ category, type: _type, year, month }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                const forecastResult = document.getElementById('forecastResult');
+                forecastResult.innerHTML = `<h2>Predicted Value:</h2>`;
+                forecastResult.innerHTML += `<p>Category: ${data.category}</p>`;
+                forecastResult.innerHTML += `<p>Type: ${data.type}</p>`;
+                forecastResult.innerHTML += `<p>Year: ${data.year}</p>`;
+                forecastResult.innerHTML += `<p>Month: ${data.month}</p>`;
+                forecastResult.innerHTML += `<p>Predicted Value: ${data.predicted_value}</p>`;
+            });
+        }
+    </script>
+</body>
+</html>
