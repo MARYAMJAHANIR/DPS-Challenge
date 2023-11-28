@@ -11,7 +11,8 @@ app = Flask(__name__)
 # Load the dataset into a pandas DataFrame
 data = pd.read_csv('monatszahlen2307_verkehrsunfaelle_10_07_23_nosum.csv')
 
-# Data processing steps
+# Data processing stepspip install flask
+
 data_until_2020 = data[data['JAHR'] <= 2020].copy()
 data_until_2020 = data_until_2020.dropna()
 data_until_2020['MONAT'] = data_until_2020['MONAT'].astype(str).str[-2:].astype(int)
@@ -53,4 +54,4 @@ def get_forecast():
     return jsonify({'category': category, 'type': _type, 'year': year, 'month': month, 'predicted_value': predicted_value})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0",port=5000)
