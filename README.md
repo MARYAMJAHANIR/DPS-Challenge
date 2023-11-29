@@ -49,8 +49,8 @@ The "Monatszahlen Verkehrsunfälle" dataset, available for download [here](https
 
 The solution includes:
 - Data preprocessing to handle the dataset and filter records up to the end of 2020.
-- Development of the prediction model using [(https://facebook.github.io/prophet/#:~:text=Prophet%20is%20a%20procedure%20for,daily%20seasonality%2C%20plus%20holiday%20effects.)].
-- Visualization of historical accident counts per category![Accident Counts per Category](Visualization_Images/Accidents_per_category.png)
+- Development of the prediction model using [here](https://facebook.github.io/prophet/#:~:text=Prophet%20is%20a%20procedure%20for,daily%20seasonality%2C%20plus%20holiday%20effects.).
+- Visualization of historical accident counts per category![Accident Counts per Category](Visualization_Images/Accidents_per_category.PNG)
 - Forecasting of alcoholic accident vs value![Forecasting of the alcoholic accident](Visualization_Images/Prediction_Visualization.png)
 
 #
