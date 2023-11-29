@@ -5,7 +5,7 @@ This repository contains the solution to the AI Engineering Challenge presented 
 #
 ### Accident Prediction Web Application
 This PythonAnywhere-based application Link -> https://flaskdeploy.pythonanywhere.com/ provides accident forecasts based on various parameters. It predicts accident values for different categories and types. 
-The Models which are used by the web application are developed using Meta's Prophet ML Model (https://facebook.github.io/prophet/docs/quick_start.html#python-api). There are 2 distinct models whose source code and development can be found in the "PROPHET&NN MODELS.ipynb".
+The Models which are used by the web application are developed using Meta's Prophet ML Model [here](https://facebook.github.io/prophet/docs/quick_start.html#python-api). There are 2 distinct models whose source code and development can be found in the "PROPHET&NN MODELS.ipynb".
 
 ### How to Use
 1. **Tabs Available:**
@@ -43,14 +43,14 @@ In this part of the challenge, the goal was to create an AI model using the "Mon
 
 ### Monatszahlen Verkehrsunfälle Dataset
 
-The "Monatszahlen Verkehrsunfälle" dataset, available for download [here](https://www.opengov-muenchen.de/dataset/monatszahlen-verkehrsunfaelle/resource/40094bd6-f82d-4979-949b-26c8dc00b9a7), encompasses detailed information related to traffic accidents. This dataset contains valuable insights into various aspects of traffic incidents, providing a comprehensive overview across specific categories.
+The "Monatszahlen Verkehrsunfälle" dataset, available for download [here](https://opendata.muenchen.de/dataset/monatszahlen-verkehrsunfaelle/resource/40094bd6-f82d-4979-949b-26c8dc00b9a7), encompasses detailed information related to traffic accidents. This dataset contains valuable insights into various aspects of traffic incidents, providing a comprehensive overview across specific categories.
 
 ### Solution Overview
 
 The solution includes:
 - Data preprocessing to handle the dataset and filter records up to the end of 2020.
 - Development of the prediction model using [(https://facebook.github.io/prophet/#:~:text=Prophet%20is%20a%20procedure%20for,daily%20seasonality%2C%20plus%20holiday%20effects.)].
-- Visualization of historical accident counts per category![Accident Counts per Category](Visualization_Images/Accidents_per_category_visualization.png)
+- Visualization of historical accident counts per category![Accident Counts per Category](Visualization_Images/Accidents_per_category.png)
 - Forecasting of alcoholic accident vs value![Forecasting of the alcoholic accident](Visualization_Images/Prediction_Visualization.png)
 
 #
@@ -82,7 +82,7 @@ The Neural Network model presented NaN for the R-squared value due to the usage 
 
 #
 ### Libraries Used
-* [Flask](https://flask.palletsprojects.com/en/3.0.x/)): Infrastructure of Web-related elements
+* [Flask](https://flask.palletsprojects.com/en/3.0.x/): Infrastructure of Web-related elements
 * [NumPy](https://numpy.org/) : Fundamental package for scientific computing
 * [pandas](https://pandas.pydata.org/): Used for manipulation and analysis of data frames
 * [matplotlib](https://matplotlib.org/) and [seaborn](https://seaborn.pydata.org/) : Basic libraries used to create graphical outputs
